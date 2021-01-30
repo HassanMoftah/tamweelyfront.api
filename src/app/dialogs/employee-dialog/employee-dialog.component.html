@@ -1,0 +1,184 @@
+<mat-card>
+  <form #form="ngForm">
+    <mat-card-title>
+      {{ Title }}
+    </mat-card-title>
+
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-4">
+          <div ngModel class="form-group">
+            <input
+              name="imgage"
+              class="d-none"
+              #imgInput
+              type="file"
+              accept="image/x-png,image/gif,image/jpeg"
+              (change)="OnChange($event.target.files)"
+            />
+            <img
+              [src]="employee.ImageThumb"
+              (dblclick)="imgInput.click()"
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div style="margin-right: 7px" class="form-group row">
+            <input
+              class="form-control"
+              required
+              [class.text-error]="NameInput.invalid && NameInput.touched"
+              [(ngModel)]="employee.Name"
+              #NameInput="ngModel"
+              name="name"
+              type="text"
+              placeholder="Full Name"
+            />
+            <div *ngIf="NameInput.invalid && NameInput.touched">
+              <small class="text-error">Name Field is Required</small>
+            </div>
+          </div>
+          <div style="margin-right: 7px" class="form-group row">
+            <input
+              class="form-control"
+              required
+              [class.text-error]="EmailInput.invalid && EmailInput.touched"
+              [(ngModel)]="employee.Email"
+              #EmailInput="ngModel"
+              name="email"
+              email
+              type="email"
+              placeholder="Email"
+            />
+            <div *ngIf="EmailInput.invalid && EmailInput.touched">
+              <small class="text-error">Email Field is Required</small>
+            </div>
+          </div>
+          <div style="margin-right: 7px" class="form-group row">
+            <input
+              class="form-control"
+              [class.text-error]="
+                BirthDateInput.invalid && BirthDateInput.touched
+              "
+              [(ngModel)]="employee.BirthDate"
+              #BirthDateInput="ngModel"
+              name="birthdate"
+              type="text"
+              onfocus="(this.type='date')"
+              placeholder="BirthDate"
+            />
+            <div *ngIf="BirthDateInput.invalid && BirthDateInput.touched">
+              <small class="text-error">BirthDate Field is Required</small>
+            </div>
+          </div>
+          <div style="margin-right: 7px" class="form-group row">
+            <input
+              class="form-control"
+              [class.text-error]="AddressInput.invalid && AddressInput.touched"
+              [(ngModel)]="employee.Address"
+              #AddressInput="ngModel"
+              name="address"
+              type="text"
+              placeholder="Address"
+              required
+            />
+            <div *ngIf="AddressInput.invalid && AddressInput.touched">
+              <small class="text-error">Address Field is Required</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div style="margin-right: 7px" class="form-group row">
+                <label for="grade"> Select Department</label>
+                <select
+                  class="form-control"
+                  required
+                  [class.text-error]="depInput.invalid && depInput.touched"
+                  [(ngModel)]="employee.DepartmentId"
+                  #depInput="ngModel"
+                  name="department"
+                >
+                  <option *ngFor="let dep of deps" [value]="dep.Id">
+                    {{ dep.Name }}
+                  </option>
+                </select>
+                <div *ngIf="depInput.invalid && depInput.touched">
+                  <small class="text-error">Department Field is Required</small>
+                </div>
+              </div>
+              <div style="margin-right: 7px" class="form-group row">
+                <label for="departement">Select Job </label>
+                <select
+                  class="form-control"
+                  required
+                  [class.text-error]="
+                    jobinput.invalid && jobinput.touched
+                  "
+                  [(ngModel)]="employee.JobId"
+                  #jobinput="ngModel"
+                  name="job"
+                >
+                  <option
+                    *ngFor="let job of jobs"
+                    [value]="job.Id"
+                  >
+                    {{ job.Name }}
+                  </option>
+                </select>
+                <div *ngIf="jobinput.invalid && jobinput.touched">
+                  <small class="text-error">Job Field is Required</small>
+                </div>
+              </div>
+    
+          <div style="margin-right: 7px" class="row">
+            <div class="col-md-12">
+              <div class="form-group row">
+                <input
+                  class="form-control"
+                  required
+                  [class.text-error]="PhoneInput.invalid && PhoneInput.touched"
+                  [(ngModel)]="employee.Phone"
+                  #PhoneInput="ngModel"
+                  name="phone"
+                  type="text"
+                  phone
+                  placeholder="Phone Number"
+                />
+                <div *ngIf="PhoneInput.invalid && PhoneInput.touched">
+                  <small class="text-error">Phone Field is Required</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end" style="margin-bottom: 0;">
+      <mat-spinner
+        style="margin: 5px; text-align: center"
+        diameter="25"
+        *ngIf="Processing"
+      ></mat-spinner>
+      <button
+        *ngIf="!Processing"
+        mat-flat-button
+        color="primary"
+        style="margin: 5px"
+        (click)="save()"
+        [disabled]="!form.valid"
+      >
+        Save
+      </button>
+      <button
+        (click)="close()"
+        mat-flat-button
+        color="warn"
+        style="margin: 5px"
+      >
+        Cancel
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>

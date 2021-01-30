@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row ml-0 dep-header">
+       <h2 style="margin: 0;">  All Departments</h2> 
+        <div class="ml-auto mr-2" style="margin: 0;">
+            <button  color="primary" mat-flat-button style="font-size: 15px;" (click)="addDeparment()">Add Department</button>
+        </div>
+    </div>
+    <div class="row  ml-0 dep-header  dep-list ">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let dep of departments;let x=index">
+                <th scope="row">{{x+1}}</th>
+                <td style="font-size: 17px;"> {{dep.Name}}</td>
+                <td>
+                    <div class="row ml-0">
+                       <div class="ml-auto mr-3">
+                        <mat-icon (click)="edit(dep)">edit</mat-icon>
+                        <mat-icon (click)="delete(dep)">delete</mat-icon>
+                       </div>
+                    </div>
+                  
+                   
+                </td>
+    
+              </tr>
+              <tr>
+
+            </tbody>
+          </table>
+    </div>
+</div>

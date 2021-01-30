@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+.splash-screen {
+    height: 100%;
+    background-color: rgba(240, 241, 250, 0.945);
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover; 
+}
+html,
+body,
+app-root {
+    height: 100%;
+    margin: 0;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.text-error{
+    color: red;
+}
+
+.custome-mat-card .mat-dialog-container{
+    padding: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

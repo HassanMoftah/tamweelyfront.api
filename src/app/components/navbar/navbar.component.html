@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="navbar">
+    <div >
+        <div style="font-family:Arial, Helvetica, sans-serif; font-weight:bolder; margin-left: 25%;">Tamweely Portal</div>
+        
+    </div>
+    <div>
+          <a  [routerLink]="['Employees']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" >Employees</a>
+          <a  [routerLink]="['Departments']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Departments</a>
+          <a  [routerLink]="['Jobs']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Jobs</a>
+         
+    </div>
+</mat-toolbar>

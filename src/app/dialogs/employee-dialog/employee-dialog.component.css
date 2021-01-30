@@ -1,0 +1,11 @@
+
+img {
+    display: block;
+    width: 150px;
+    height:150px;
+    border-radius: 50%;
+}
+.phone{
+    max-height: 10vh;
+    overflow-x: auto;
+}

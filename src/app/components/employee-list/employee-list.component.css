@@ -1,0 +1,12 @@
+.dep-header{
+    border: 1px solid rgb(196, 196, 196);
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.dep-list{
+    height: 73vh;
+    margin-top: 10px;
+     overflow-y: auto;
+     overflow-x: hidden;
+}

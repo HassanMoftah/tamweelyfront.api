@@ -1,0 +1,24 @@
+.navbar {
+    position: fixed;
+    background-color: rgb(17, 12, 44);
+    justify-content: space-between;
+    height: 60px;
+    z-index: 10;
+}
+mat-icon{
+    margin: 20px;
+    cursor: pointer;
+}
+a{
+   font-size: 14px;
+   text-decoration: underline !important;
+   margin: 7px; 
+   cursor: pointer;
+   color: grey;
+   padding: 8px;
+   font-weight: bold;
+}
+.active-link{
+    background-color: grey;
+    color: white;
+}

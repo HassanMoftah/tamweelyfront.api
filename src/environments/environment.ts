@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  backendurl:"https://tamweelyapi.herokuapp.com/api/",
-  rootImageFile:"https://tamweelyapi.herokuapp.com/EmployeeImages/"
+  backendurl:"https://localhost:44309/api/",
+  rootImageFile:"https://localhost:44309/EmployeeImages/"
 };
 
 /*
